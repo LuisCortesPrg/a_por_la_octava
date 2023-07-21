@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+
+  background-color: lightblue;
+}
+
+#game-screen {
+  background-image: url(./imagenes/aficion.jpg);
+  background-size: 100%;
+  width: 800px;
+  height: 600px;
+  border: 0px;
+  padding: 0px;
+}
+
+#ventana_inicial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#start,
+#finalv,
+#finald {
+  background-color: white;
+  color: blue;
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+#game-box {
+  width: 700px;
+  height: 500px;
+  background-image: url("./imagenes/football-pitch.png");
+  background-size: 600% 100%; /* Estirar la imagen horizontalmente */
+  animation: backgroundScroll 60s; /* Animación de desplazamiento */
+
+  /*seeting for game box */
+  overflow: hidden; /*esto previene que los elementos sean visibles fuera del juego*/
+  position: relative; /*permite a los elementos ser posicionados relatives en la pantalla del juego*/
+  user-select: none; /*previene elementos de ser superpuestos*/
+}
+
+@keyframes backgroundScroll {
+  /*activa la animacion de movimiento y su posicion inicial y final */
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+#game-screen,
+#game-over-victoria,
+#game-over-derrota {
+  display: none; /*los hago invisible de momento*/
+}

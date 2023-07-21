@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-    
-</body>
+    <link rel="stylesheet" href="./estilos.css" />
+  </head>
+  <body>
+    <!--pantalla inicial-->
+    <div id="ventana_inicial" class="comienzo">
+      <img src="./imagenes/inicio2.jpg" witdh="400" alt="logo" />
+      <button id="start">Play</button>
+    </div>
+
+    <!--pantalla del juego-->
+    <div id="game-screen" class="container">
+      <div id="game-box">
+        <!--elementos del juego-->
+        
+      </div>
+    </div>
+
+    <!--final victoria-->
+    <div id="game-over-victoria" class="container">
+      <img src="./imagenes/final-victoria.jpg" width="400" alt="logo" />
+      <button id="finalv">Play again</button>
+    </div>
+
+    <!--final derrota-->
+    <div id="game-over-derrota" class="container">
+      <img src="./imagenes/messi-llorando.jpg" width="400" alt="logo" />
+      <button id="finald">Play again</button>
+    </div>
+    <script src="./js/juego_principal.js"></script>
+    <script src="./js/classes.js"></script>
+    <script src="./js/messi.js"></script>
+  </body>
 </html>
