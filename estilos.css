@@ -47,7 +47,7 @@ body {
   animation: backgroundScroll 60s; /* Animación de desplazamiento */
 
   /*seeting for game box */
-  overflow: hidden; /*esto previene que los elementos sean visibles fuera del juego*/
+  /*overflow: hidden; /*esto previene que los elementos sean visibles fuera del juego*/
   position: relative; /*permite a los elementos ser posicionados relatives en la pantalla del juego*/
   user-select: none; /*previene elementos de ser superpuestos*/
 }
