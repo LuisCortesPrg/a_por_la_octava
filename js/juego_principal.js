@@ -17,3 +17,11 @@ function empezarJugar() {
 
 //add event listeners
 startBtnNode.addEventListener("click", empezarJugar);
+document.addEventListener("keyDown",()=>{
+  gameBoxNode.Messi.movimientoMessi()
+})
+
+
+
+
+
