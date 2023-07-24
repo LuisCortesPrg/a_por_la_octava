@@ -8,7 +8,7 @@ gameBoxNode.append(this.node)
 
 //posicion y dimensiones
 this.x=gameBoxNode.offsetWidth; //ancho de la juego;
-this.y=380;
+this.y=200;
 this.h=60;
 this.w=60;
 
@@ -24,7 +24,7 @@ this.w=60;
 
     //metodos
     automaticMovement=()=>{
-        this.y -=1
+        this.y -=2
         this.positionUpdate4()
     }
     positionUpdate4=()=>{

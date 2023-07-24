@@ -8,9 +8,9 @@ gameBoxNode.append(this.node)
 
 //posicion y dimensiones
 this.x=gameBoxNode.offsetWidth; //ancho de la juego;
-this.y=380;
-this.h=60;
-this.w=60;
+this.y=112;
+this.h=280;
+this.w=120;
 
  //ajuste y posicion inicial
  this.node.style.width = `${this.w}px`;

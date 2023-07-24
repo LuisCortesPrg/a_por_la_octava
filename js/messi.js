@@ -17,21 +17,21 @@ class Messi {
     this.node.style.position = "absolute";
     this.node.style.top = `${this.y}px`;
     this.node.style.left = `${this.x}px`;
-this.movementMessi=20;
+this.movimentoMessi=20;
 this.movimiento=true;
     
   }
 
   //metodos de messi
 movimientoMessi=(event)=>{
- this.movementMessiUpdate()
+ 
   if(event.key==="ArrowUp"){
-    this.y -=this.movementMessi
+    this.y -=this.movimentoMessi
   }else if( event.key==="ArrowDown"){
-    this.y += this.movementMessi
+    this.y += this.movimentoMessi
   }
   
-  
+  this.movementMessiUpdate()
 } 
 
 
