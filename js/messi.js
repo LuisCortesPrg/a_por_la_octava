@@ -1,11 +1,9 @@
 class Messi {
   constructor() {
-    
-      this.node = document.createElement("img");
+    this.node = document.createElement("img");
     this.node.src = "./imagenes/delantero(2).png";
     gameBoxNode.append(this.node);
 
-    
     //propiedades de messi
     this.x = 20;
     this.y = 150;
@@ -17,29 +15,22 @@ class Messi {
     this.node.style.position = "absolute";
     this.node.style.top = `${this.y}px`;
     this.node.style.left = `${this.x}px`;
-this.movimentoMessi=20;
-this.movimiento=true;
-    
+    this.movimentoMessi = 20;
+    this.movimiento = true;
   }
 
   //metodos de messi
-movimientoMessi=(event)=>{
- 
-  if(event.key==="ArrowUp"){
-    this.y -=this.movimentoMessi
-  }else if( event.key==="ArrowDown"){
-    this.y += this.movimentoMessi
-  }
-  
-  this.movementMessiUpdate()
-} 
+  movimientoMessi = (event) => {
+    if (event.key === "ArrowUp") {
+      this.y -= this.movimentoMessi;
+    } else if (event.key === "ArrowDown") {
+      this.y += this.movimentoMessi;
+    }
 
+    this.movementMessiUpdate();
+  };
 
-movementMessiUpdate=()=>{
-  this.node.style.top = `${this.y}px`;
-}
-  
-
-
-
+  movementMessiUpdate = () => {
+    this.node.style.top = `${this.y}px`;
+  };
 }

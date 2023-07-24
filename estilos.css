@@ -2,7 +2,6 @@ body {
   margin: 0;
 
   background-color: lightblue;
-  
 }
 
 #game-screen {
@@ -47,9 +46,9 @@ body {
   background-image: url("./imagenes/football-pitch.png");
   background-size: 600% 100%; /* Estirar la imagen horizontalmente */
   animation: backgroundScroll 60s; /* Animación de desplazamiento */
-
+  animation-fill-mode: forwards;
   /*seeting for game box */
- /*overflow: hidden; /*esto previene que los elementos sean visibles fuera del juego*/
+  overflow: hidden; /*esto previene que los elementos sean visibles fuera del juego*/
   position: relative; /*permite a los elementos ser posicionados relatives en la pantalla del juego*/
   user-select: none; /*previene elementos de ser superpuestos*/
 }

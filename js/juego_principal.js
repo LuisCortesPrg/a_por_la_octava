@@ -2,9 +2,9 @@
 const startBtnNode = document.querySelector("#start");
 const viScreenNode = document.querySelector("#ventana_inicial");
 const gameScreenNode = document.querySelector("#game-screen");
-const gameBoxNode= document.querySelector("#game-box");
+const gameBoxNode = document.querySelector("#game-box");
 
-let gameObj=null;
+let gameObj = null;
 
 //state management functions
 function empezarJugar() {
@@ -17,11 +17,6 @@ function empezarJugar() {
 
 //add event listeners
 startBtnNode.addEventListener("click", empezarJugar);
-document.addEventListener("keyDown",(event)=>{
-  gameBoxNode.Messi.movimientoMessi()
-})
-
-
-
-
-
+document.addEventListener("keyDown", (event) => {
+  gameBoxNode.Messi.movimientoMessi();
+});
