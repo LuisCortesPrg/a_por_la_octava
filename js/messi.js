@@ -21,13 +21,10 @@ class Messi {
 
   //metodos de messi
   movimientoMessi = (event) => {
-    //console.log("test messi")
     if (event.key === "ArrowUp") {
       this.y -= this.movimentoMessi;
     } else if (event.key === "ArrowDown") {
       this.y += this.movimentoMessi;
-    }else if (event.key==="Space"){
-      this.shoot();
     }
 
     this.movementMessiUpdate();
@@ -36,8 +33,4 @@ class Messi {
   movementMessiUpdate = () => {
     this.node.style.top = `${this.y}px`;
   };
-
-  shoot() {
-    const balon = new Balon(this.x + this.w, this.y + this.h / 2);
-    return balon;}
 }

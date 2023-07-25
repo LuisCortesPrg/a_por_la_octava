@@ -18,6 +18,9 @@ function empezarJugar() {
 //add event listeners
 startBtnNode.addEventListener("click", empezarJugar);
 window.addEventListener("keydown", (event) => {
-  gameObj.messi.movimientoMessi(event);    
+  gameObj.messi.movimientoMessi(event);
+  if (event.key === " ") {
+    gameObj.messiShoot();
+  }
   //console.log(event)
 });

@@ -2,8 +2,8 @@ class Game {
   constructor() {
     this.messi = new Messi();
     this.minMessiY = 17;
-    this.maxMessiY =420;
-this.balones=[]
+    this.maxMessiY = 420;
+    this.balones = [];
     //pogba
     //this.pogba=new Pogba()
     this.pogbaArr = [];
@@ -12,7 +12,7 @@ this.balones=[]
     this.francesesArr = [];
     //portero
     this.portero = new Portero();
-    
+
     //porteria
     this.porteria = new Porteria();
     this.separacionVertical = 100; // Separación vertical entre los jugadores
@@ -22,30 +22,31 @@ this.balones=[]
     this.isCreatingJugadores = true;
     setTimeout(() => this.aparecePortero(), 49000);
     setTimeout(() => this.aparecePorteria(), 51000);
-    
   }
 
-  
   messiShoot() {
-    const balon = this.messi.shoot();
+    const balon = new Balon(
+      this.messi.x + this.messi.w,
+      this.messi.y + this.messi.h / 2
+    );
     this.balones.push(balon);
+    console.log(balon);
   }
 
   moverBalones() {
     this.balones.forEach((balon) => {
       balon.move();
-    });}
-  
-    checkMessiPosition() {
-      // Verificar los límites del movimiento vertical de Messi
-      if (this.messi.y < this.minMessiY) {
-        this.messi.y = this.minMessiY;
-      } else if (this.messi.y > this.maxMessiY) {
-        this.messi.y = this.maxMessiY;
-      }
+    });
+  }
+
+  checkMessiPosition() {
+    // límites de Messi
+    if (this.messi.y < this.minMessiY) {
+      this.messi.y = this.minMessiY;
+    } else if (this.messi.y > this.maxMessiY) {
+      this.messi.y = this.maxMessiY;
     }
-
-
+  }
 
   RandomYPosicion = () => {
     let distanciaTest = Math.floor(
@@ -56,9 +57,10 @@ this.balones=[]
 
   crearJugadoresAleatorios = () => {
     if (this.time >= this.totalTime) {
-      this.isCreatingJugadores = false; //creo la parada de creacion de jugadores 
-      return;}
-    
+      this.isCreatingJugadores = false; //creo la parada de creacion de jugadores
+      return;
+    }
+
     if (this.isCreatingJugadores && this.frames % 60 === 0) {
       //igualo la creacion de jugadores con los frames de distancia establecido entre las filas
 
@@ -86,11 +88,11 @@ this.balones=[]
           if (nuevofranceses.y < 440) {
             this.francesesArr.push(nuevofranceses);
             nuevofranceses.node.style.top = `${nuevofranceses.y}px`;
-          }}}}};
-        
-      
-    
-  
+          }
+        }
+      }
+    }
+  };
 
   //pogbasAparecen=()=>{
   //al inicio del juego
@@ -130,10 +132,11 @@ this.balones=[]
     const porteroInterval = setInterval(() => {
       this.portero.x -= 10; // Muevelo 10px hacia la izq x intervalo
       this.portero.node.style.left = `${this.portero.x}px`;
-      movedDistance += 10;//hace que pare
+      movedDistance += 10; //hace que pare
       if (movedDistance >= maxMovement) {
         clearInterval(porteroInterval);
-        this.portero.movimientoPortero()} 
+        this.portero.movimientoPortero();
+      }
     }, 150);
   }
 
@@ -150,18 +153,16 @@ this.balones=[]
     }, 150);
   }
 
-  
-
-
   //metodos
   gameLoop = () => {
+    //console.log(this.balones)
     requestAnimationFrame(this.gameLoop);
     this.frames++;
     this.time++;
     this.timerPortero++;
     this.checkMessiPosition();
     //this.messiShoot();
-    //this.moverBalones();
+    this.moverBalones();
     //this.messi.movementMessiUpdate();
 
     // this.franceses.automaticMovement();
@@ -178,6 +179,5 @@ this.balones=[]
 
     this.francesesDesaparecen();
     this.pogbasDesaparecen();
-    
   };
 }

@@ -13,8 +13,6 @@ class Portero {
     this.inicialX = this.x; //guardo la posicion inicial
     this.minY = 112;
     this.maxY = 320;
-    
-
 
     //ajuste y posicion inicial
     this.node.style.width = `${this.w}px`;
@@ -33,17 +31,17 @@ class Portero {
     this.node.style.top = `${this.y}px`;
   };
 
-  movimientoPortero() {   
+  movimientoPortero() {
     const moveStep = 35; // velocidad
-    let direction = 1; // Dirección inicial del movimiento 
-    const move = () => {//movimiento 
+    let direction = 1; // Dirección inicial del movimiento
+    const move = () => {
+      //movimiento
       this.y += moveStep * direction;
       this.node.style.top = `${this.y}px`;
-      if (this.y >= this.maxY || this.y <= this.minY) {       
-        direction *= -1;}};// Si alcanza la posición maxY o minY, invertimos la dirección
-      setInterval(move, 100);}// Iniciar el movimiento usando setInterval   
-  
-     
-  
+      if (this.y >= this.maxY || this.y <= this.minY) {
+        direction *= -1;
+      }
+    }; // Si alcanza la posición maxY o minY, invertimos la dirección
+    setInterval(move, 100);
+  } // Iniciar el movimiento usando setInterval
 }
-
