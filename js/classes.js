@@ -10,6 +10,7 @@ class Game {
     this.francesesArr = [];
     //portero
     this.portero = new Portero();
+    
     //porteria
     this.porteria = new Porteria();
     this.separacionVertical = 100; // Separación vertical entre los jugadores
@@ -19,6 +20,7 @@ class Game {
     this.isCreatingJugadores = true;
     setTimeout(() => this.aparecePortero(), 49000);
     setTimeout(() => this.aparecePorteria(), 51000);
+    
   }
 
 
@@ -109,7 +111,7 @@ class Game {
       movedDistance += 10;//hace que pare
       if (movedDistance >= maxMovement || movedDistance >= 300) {
         clearInterval(porteroInterval);
-      }
+        this.portero.movimientoPortero()} 
     }, 150);
   }
 
@@ -150,5 +152,6 @@ class Game {
 
     this.francesesDesaparecen();
     this.pogbasDesaparecen();
+    
   };
 }
