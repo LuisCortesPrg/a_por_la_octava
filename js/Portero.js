@@ -11,6 +11,10 @@ class Portero {
     this.h = 60;
     this.w = 60;
     this.inicialX = this.x; //guardo la posicion inicial
+    this.minY = 112;
+    this.maxY = 320;
+    
+
 
     //ajuste y posicion inicial
     this.node.style.width = `${this.w}px`;
@@ -28,4 +32,6 @@ class Portero {
   positionUpdate4 = () => {
     this.node.style.top = `${this.y}px`;
   };
+
+ 
 }

@@ -21,6 +21,7 @@ class Messi {
 
   //metodos de messi
   movimientoMessi = (event) => {
+    //console.log("test messi")
     if (event.key === "ArrowUp") {
       this.y -= this.movimentoMessi;
     } else if (event.key === "ArrowDown") {

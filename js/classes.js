@@ -106,7 +106,7 @@ class Game {
     const porteroInterval = setInterval(() => {
       this.portero.x -= 10; // Muevelo 10px hacia la izq x intervalo
       this.portero.node.style.left = `${this.portero.x}px`;
-      movedDistance += 10;
+      movedDistance += 10;//hace que pare
       if (movedDistance >= maxMovement || movedDistance >= 300) {
         clearInterval(porteroInterval);
       }
@@ -126,13 +126,15 @@ class Game {
     }, 150);
   }
 
+  
+
   //metodos
   gameLoop = () => {
     requestAnimationFrame(this.gameLoop);
     this.frames++;
     this.time++;
     this.timerPortero++;
-    this.messi.movementMessiUpdate();
+    //this.messi.movementMessiUpdate();
 
     // this.franceses.automaticMovement();
     // this.pogba.automaticMovement();
