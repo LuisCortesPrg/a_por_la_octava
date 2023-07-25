@@ -33,14 +33,17 @@ class Portero {
     this.node.style.top = `${this.y}px`;
   };
 
-  movimientoPortero() {
-    setInterval(() => {
-      this.y += 15; // Incrementa la posición en el eje Y (puedes ajustar la velocidad cambiando el valor 2)
-      if (this.y > this.maxY) {
-        this.y = this.minY; // Si alcanza la posición maxY, reinicia el movimiento desde minY
-      }
-      this.node.style.top = `${this.y}px`; // Actualiza la posición en el DOM
-    }, 200); // Establece el intervalo de tiempo (puedes ajustar el valor para cambiar la velocidad del movimiento)
-  }
+  movimientoPortero() {   
+    const moveStep = 35; // velocidad
+    let direction = 1; // Dirección inicial del movimiento 
+    const move = () => {//movimiento 
+      this.y += moveStep * direction;
+      this.node.style.top = `${this.y}px`;
+      if (this.y >= this.maxY || this.y <= this.minY) {       
+        direction *= -1;}};// Si alcanza la posición maxY o minY, invertimos la dirección
+      setInterval(move, 100);}// Iniciar el movimiento usando setInterval   
+  
+     
+  
 }
 

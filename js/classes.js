@@ -1,7 +1,9 @@
 class Game {
   constructor() {
     this.messi = new Messi();
-
+    this.minMessiY = 17;
+    this.maxMessiY =420;
+this.balones=[]
     //pogba
     //this.pogba=new Pogba()
     this.pogbaArr = [];
@@ -22,6 +24,26 @@ class Game {
     setTimeout(() => this.aparecePorteria(), 51000);
     
   }
+
+  
+  messiShoot() {
+    const balon = this.messi.shoot();
+    this.balones.push(balon);
+  }
+
+  moverBalones() {
+    this.balones.forEach((balon) => {
+      balon.move();
+    });}
+  
+    checkMessiPosition() {
+      // Verificar los límites del movimiento vertical de Messi
+      if (this.messi.y < this.minMessiY) {
+        this.messi.y = this.minMessiY;
+      } else if (this.messi.y > this.maxMessiY) {
+        this.messi.y = this.maxMessiY;
+      }
+    }
 
 
 
@@ -109,7 +131,7 @@ class Game {
       this.portero.x -= 10; // Muevelo 10px hacia la izq x intervalo
       this.portero.node.style.left = `${this.portero.x}px`;
       movedDistance += 10;//hace que pare
-      if (movedDistance >= maxMovement || movedDistance >= 300) {
+      if (movedDistance >= maxMovement) {
         clearInterval(porteroInterval);
         this.portero.movimientoPortero()} 
     }, 150);
@@ -122,7 +144,7 @@ class Game {
       this.porteria.x -= 10;
       this.porteria.node.style.left = `${this.porteria.x}px`;
       movedDistance2 += 10;
-      if (movedDistance2 >= maxMovement2 || movedDistance2 >= 230) {
+      if (movedDistance2 >= maxMovement2) {
         clearInterval(porteriaInterval);
       }
     }, 150);
@@ -130,12 +152,16 @@ class Game {
 
   
 
+
   //metodos
   gameLoop = () => {
     requestAnimationFrame(this.gameLoop);
     this.frames++;
     this.time++;
     this.timerPortero++;
+    this.checkMessiPosition();
+    //this.messiShoot();
+    //this.moverBalones();
     //this.messi.movementMessiUpdate();
 
     // this.franceses.automaticMovement();
