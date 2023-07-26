@@ -6,7 +6,7 @@ class Porteria {
     gameBoxNode.append(this.node);
 
     //posicion y dimensiones
-    this.x = gameBoxNode.offsetWidth; //ancho de la juego;
+    this.x = gameBoxNode.offsetWidth+50; //ancho de la juego;
     this.y = 112;
     this.h = 280;
     this.w = 120;

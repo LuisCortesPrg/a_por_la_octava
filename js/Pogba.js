@@ -10,6 +10,7 @@ class Pogba {
     this.y = 320;
     this.h = 60;
     this.w = 60;
+    this.life=3;
 
     //ajuste y posicion inicial
     this.node.style.width = `${this.w}px`;

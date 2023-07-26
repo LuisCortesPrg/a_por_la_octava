@@ -6,7 +6,7 @@ class Portero {
     gameBoxNode.append(this.node);
 
     //posicion y dimensiones
-    this.x = gameBoxNode.offsetWidth; //ancho de la juego;
+    this.x = gameBoxNode.offsetWidth+200; //ancho de la juego;
     this.y = 200;
     this.h = 60;
     this.w = 60;
