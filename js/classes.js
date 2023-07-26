@@ -4,6 +4,7 @@ class Game {
     this.minMessiY = 17;
     this.maxMessiY = 420;
     this.balones = [];
+    
     //pogba
     //this.pogba=new Pogba()
     this.pogbaArr = [];
@@ -22,7 +23,93 @@ class Game {
     this.isCreatingJugadores = true;
     setTimeout(() => this.aparecePortero(), 49000);
     setTimeout(() => this.aparecePorteria(), 51000);
+    this.isGameOn=true
   }
+  Victoria(){
+    cancelAnimationFrame(this.gameLoop)
+    this.isGameOn=false;
+    gameScreenNode.style.display="none";
+    finalvBtnNode.style.display="flex";
+    finaldBtnNode.style.display="none";
+
+  }
+
+  Derrota(){
+    cancelAnimationFrame(this.gameLoop)
+    this.isGameOn=false;
+    gameScreenNode.style.display="none";
+    finalvBtnNode.style.display="none";
+    finaldBtnNode.style.display="flex";
+
+  }
+ 
+ collisionBalonPorteria=()=>{
+  this.balones.forEach((balon)=>{
+  if (this.porteria.x < balon.x + balon.w &&
+      this.porteria.x + this.porteria.w > balon.x &&
+      this.porteria.y < balon.y + balon.h &&
+      this.porteria.y + this.porteria.h > balon.y){
+        this.Victoria()}
+      
+      })
+ }
+
+ collisionBalonPortero=()=>{
+  this.balones.forEach((balon)=>{
+    if (this.portero.x < balon.x + balon.w &&
+        this.portero.x + this.portero.w > balon.x &&
+        this.portero.y < balon.y + balon.h &&
+        this.portero.y + this.portero.h > balon.y){
+          this.Derrota()}
+        })
+        
+ }
+
+ collisionFrancesMessi=()=>{
+  this.francesesArr.forEach((frances)=>{
+    if (this.portero.x < frances.x + frances.w &&
+        this.portero.x + this.portero.w > frances.x &&
+        this.portero.y < frances.y + frances.h &&
+        this.portero.y + this.portero.h > frances.y){
+          this.Derrota()}
+        })
+ }
+
+ collisionPogbaMessi=()=>{
+  this.pogbaArr.forEach((pogba)=>{
+  if (this.portero.x < pogba.x + pogba.w &&
+    this.portero.x + this.portero.w > pogba.x &&
+    this.portero.y < pogba.y + pogba.h &&
+    this.portero.y + this.portero.h > pogba.y){
+      this.Derrota()}
+    })
+ }
+
+ collisionBalonesFranceses=()=>{
+  this.balones.forEach((balon)=>{
+    if (this. .x < balon.x + balon.w &&
+        this. .x + this. .w > balon.x &&
+        this. .y < balon.y + balon.h &&
+        this. .y + this. .h > balon.y)})
+
+   this.francesesArr.forEach((frances)=>{
+    if (this. .x < frances.x + frances.w &&
+        this. .x + this. .w > frances.x &&
+        this. .y < frances.y + frances.h &&
+        this. .y + this. .h > frances.y)
+        
+        this.Derrota()
+              })
+
+
+          
+    
+ this.Derrota()}
+
+ collisionBalonesPogbas=()=>{
+
+ }
+
 
   messiShoot() {
     const balon = new Balon(
@@ -179,5 +266,6 @@ class Game {
 
     this.francesesDesaparecen();
     this.pogbasDesaparecen();
+    collisionBalonPorteria()
   };
 }

@@ -19,4 +19,6 @@ class Porteria {
     this.node.style.left = `${this.x}px`;
   }
   //metodos
+
+  
 }

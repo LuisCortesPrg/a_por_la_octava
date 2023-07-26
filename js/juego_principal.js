@@ -3,6 +3,8 @@ const startBtnNode = document.querySelector("#start");
 const viScreenNode = document.querySelector("#ventana_inicial");
 const gameScreenNode = document.querySelector("#game-screen");
 const gameBoxNode = document.querySelector("#game-box");
+const finalvBtnNode = document.querySelector("#finalv");
+const finaldBtnNode = document.querySelector("#finald");
 
 let gameObj = null;
 
@@ -17,10 +19,13 @@ function empezarJugar() {
 
 //add event listeners
 startBtnNode.addEventListener("click", empezarJugar);
+
+
+
 window.addEventListener("keydown", (event) => {
   gameObj.messi.movimientoMessi(event);
   if (event.key === " ") {
-    gameObj.messiShoot();
-  }
-  //console.log(event)
-});
+    gameObj.messiShoot();}});
+  
+  
+
