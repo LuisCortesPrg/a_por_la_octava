@@ -16,7 +16,7 @@ let gameObj = null;
 function empezarJugar() {
   viScreenNode.style.display = "none";
   gameScreenNode.style.display = "flex";
-
+muchachos.play()
   gameObj = new Game();
   gameObj.gameLoop();
 }
@@ -26,7 +26,9 @@ function reempezar(){
   vScreenNode.style.display = "none";
   dScreenNode.style.display = "none";
   gameBoxNode.innerHTML = "";
+  muchachos.pause()
   gameObj = new Game();
+  muchachos.play()
   gameObj.gameLoop();
 
 }
@@ -39,6 +41,10 @@ window.addEventListener("keydown", (event) => {
   gameObj.messi.movimientoMessi(event);
   if (event.key === " ") {
     gameObj.messiShoot();}});
+
+window.addEventListener(empezarJugar, ()=>{
+  muchachos.play()
+})    
   
   
 
