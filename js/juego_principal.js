@@ -7,7 +7,7 @@ const gameScreenNode = document.querySelector("#game-screen");
 const gameBoxNode = document.querySelector("#game-box");
 const vScreenNode= document.querySelector("#game-over-victoria")
 const dScreenNode=document.querySelector("#game-over-derrota")
-
+const Musica=document.querySelector("#muchachos")
 
 
 let gameObj = null;
@@ -26,7 +26,8 @@ function reempezar(){
   vScreenNode.style.display = "none";
   dScreenNode.style.display = "none";
   gameBoxNode.innerHTML = "";
-  
+  gameObj = new Game();
+  gameObj.gameLoop();
 
 }
 //add event listeners

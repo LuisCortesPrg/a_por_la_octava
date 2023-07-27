@@ -31,7 +31,6 @@ class Game {
     gameScreenNode.style.display = "none";
     vScreenNode.style.display = "flex";
     dScreenNode.style.display = "none";
-    
   }
 
   Derrota() {
@@ -39,7 +38,6 @@ class Game {
     gameScreenNode.style.display = "none";
     vScreenNode.style.display = "none";
     dScreenNode.style.display = "flex";
-    
   }
 
   collisionBalonPorteria = () => {
@@ -56,7 +54,7 @@ class Game {
   };
 
   collisionBalonPortero = () => {
-    this.balones.forEach((balon,i) => {
+    this.balones.forEach((balon, i) => {
       if (
         this.portero.x < balon.x + balon.w &&
         this.portero.x + this.portero.w > balon.x &&
@@ -64,7 +62,7 @@ class Game {
         this.portero.y + this.portero.h > balon.y
       ) {
         this.balones.splice(i, 1);
-          balon.node.remove();
+        balon.node.remove();
         this.Derrota();
       }
     });
@@ -125,12 +123,11 @@ class Game {
         ) {
           this.balones.splice(i, 1);
           balon.node.remove();
-          pogba.life--
-          if(pogba.life<=0){
-          this.pogbaArr.splice(j, 1);
-          pogba.node.remove();}
-          
-          
+          pogba.life--;
+          if (pogba.life <= 0) {
+            this.pogbaArr.splice(j, 1);
+            pogba.node.remove();
+          }
         }
       });
     });
@@ -285,8 +282,9 @@ class Game {
 
   //metodos
   gameLoop = () => {
+    
     //console.log(this.balones)
-    requestAnimationFrame(this.gameLoop);
+
     this.frames++;
     this.time++;
     this.timerPortero++;
@@ -316,5 +314,8 @@ class Game {
     this.collisionPogbaMessi();
     this.collisionBalonesFranceses();
     this.collisionBalonesPogba();
+    if (this.isGameOn === true) {
+      requestAnimationFrame(this.gameLoop);
+    }
   };
 }
