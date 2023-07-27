@@ -16,6 +16,7 @@ let gameObj = null;
 function empezarJugar() {
   viScreenNode.style.display = "none";
   gameScreenNode.style.display = "flex";
+  muchachos.volume = 0.1;
 muchachos.play()
   gameObj = new Game();
   gameObj.gameLoop();
@@ -28,6 +29,7 @@ function reempezar(){
   gameBoxNode.innerHTML = "";
   muchachos.pause()
   gameObj = new Game();
+  muchachos.volume = 0.1;
   muchachos.play()
   gameObj.gameLoop();
 
