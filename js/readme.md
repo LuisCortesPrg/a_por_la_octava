@@ -1,6 +1,7 @@
 # World cup
 ## Description
-<p>World cup is a football game in which the player tries to score a goal after  hitting the defender with the ball to clear the way until the goalkeeper<p>
+<p>World cup is a football game in which the player tries to score a goal after  hitting the defender with the ball to clear the way until the goalkeeper</p>
+
 ## Main Functionalities
 - Messi move automatically foward  ahd players change direction by clicking <strong>up</strong> and <strong>down</strong>.
 - Messi shoots by pressing  <strong>space</strong> and it is necessary to hit the enemies and makes them disappear clearing the way. 
@@ -15,17 +16,17 @@
 
 ## Technologies Used
 - Html
--CSS
--JavasCript
--DOM manipulation
--JS class
--JS audio() and JS image()
+- CSS
+- JavasCript
+- DOM manipulation
+- JS class
+- JS audio() and JS image()
 
 ## States
--Start Screen
--Game Screen
--Game Over Screen
--Game Victory Screen
+- Start Screen
+- Game Screen
+- Game Over Screen
+- Game Victory Screen
 
 ## Proyect Structure
 #### Main
@@ -46,16 +47,16 @@
 - Derrota();
 
 ### Class
--Class Messi
--Class Franceses
--Class Pogba
--Class Porteria
--Class Portero
--Class Balon
+- Class Messi
+- Class Franceses
+- Class Pogba
+- Class Porteria
+- Class Portero
+- Class Balon
 
 ## Extra Links
 - Game: https://luiscortesprg.github.io/a_por_la_octava/
 
--Slides: https://docs.google.com/presentation/d/1ApPo74WtvdtxipRB2qnTzm4XT77MnasKt9cY_1nhtxs/edit?usp=sharing
+- Slides: https://docs.google.com/presentation/d/1ApPo74WtvdtxipRB2qnTzm4XT77MnasKt9cY_1nhtxs/edit?usp=sharing
 
 
