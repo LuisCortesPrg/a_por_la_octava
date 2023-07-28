@@ -9,11 +9,11 @@
 - There are 2 types of defender, the first of them wears a blue shirt and Messi should hit them once to make them disappear and the second one wears a blue shirt with a yellow line and Messi should hit them three times to make them disappear.
 - To win the game Messi must get to the goal and score without the goalkepper touch the ball. 
 
-##Backlog Functionalities
+## Backlog Functionalities
 - Adding differents types of defenders.
 - Adding a points system to improve replayability.
 
-##Technologies Used
+## Technologies Used
 - Html
 -CSS
 -JavasCript
@@ -21,13 +21,13 @@
 -JS class
 -JS audio() and JS image()
 
-##States
+## States
 -Start Screen
 -Game Screen
 -Game Over Screen
 -Game Victory Screen
 
-##Proyect Structure
+## Proyect Structure
 #### Main
 - this.checkMessiPosition();
 - this.moverBalones();
@@ -53,7 +53,7 @@
 -Class Portero
 -Class Balon
 
-##Extra Links
+## Extra Links
 - Game: https://luiscortesprg.github.io/a_por_la_octava/
 
 -Slides: https://docs.google.com/presentation/d/1ApPo74WtvdtxipRB2qnTzm4XT77MnasKt9cY_1nhtxs/edit?usp=sharing
