@@ -5,16 +5,12 @@ class Game {
     this.maxMessiY = 420;
     this.balones = [];
 
-    //pogba
-    //this.pogba=new Pogba()
     this.pogbaArr = [];
-    //franceses
-    //this.franceses=new Franceses()
+
     this.francesesArr = [];
-    //portero
+
     this.portero = new Portero();
 
-    //porteria
     this.porteria = new Porteria();
     this.separacionVertical = 100; // Separación vertical entre los jugadores
     this.maxJugadoresPorGrupo = 5; // Número máximo de objetos por grupo
@@ -213,22 +209,6 @@ class Game {
     }
   };
 
-  //pogbasAparecen=()=>{
-  //al inicio del juego
-  //cuando pasen 2 seg o ramdon
-  //if(this.pogbaArr.length===0 || this.frames%80===0){
-  // let nuevopogba=new Pogba()
-  //this.pogbaArr.push(nuevopogba)
-  //console.log("test pogba")
-  // }}
-
-  //francesesAparecen=()=>{
-  //al inicio del juego
-  //cuando pasen 2 seg o ramdon
-  //if(this.francesesArr.length===0|| this.frames%80===0){
-  //let nuevofranceses=new Franceses()
-  //this.francesesArr.push(nuevofranceses)}
-
   francesesDesaparecen = () => {
     //quitamos los elementos del array cuando salgan del gamescreen
     if (this.francesesArr.length === 0) {
@@ -282,21 +262,12 @@ class Game {
 
   //metodos
   gameLoop = () => {
-    
-    //console.log(this.balones)
-
     this.frames++;
     this.time++;
     this.timerPortero++;
     this.checkMessiPosition();
-    //this.messiShoot();
     this.moverBalones();
     this.borrarBalones();
-    //this.messi.movementMessiUpdate();
-
-    // this.franceses.automaticMovement();
-    // this.pogba.automaticMovement();
-    // this.portero.automaticMovement();
     this.crearJugadoresAleatorios();
     this.RandomYPosicion();
     this.pogbaArr.forEach((cadaPobga) => {
@@ -305,7 +276,6 @@ class Game {
     this.francesesArr.forEach((cadaFrances) => {
       cadaFrances.automaticMovement();
     });
-
     this.francesesDesaparecen();
     this.pogbasDesaparecen();
     this.collisionBalonPorteria();
